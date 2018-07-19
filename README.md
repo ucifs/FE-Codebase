@@ -58,18 +58,55 @@ const isEmpty = val => {
 }
 ```
 
-### 判断浏览器类型
-```js
+### 获取UA
 
+```js
+const UA = typeof window !== 'undefined' && window.navigator.userAgent.toLowerCase();
 ```
 
-### 判断是否为浏览器环境
+### 判断是否是IE
+
+```js
+const isIE = UA && /msie|trident/.test(UA)
+```
+
+### 判断是否是IE9
+
+```js
+const isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+```
+
+### 判断是否是Edge
+
+```js
+const isEdge = UA && UA.indexOf('edge/') > 0;
+```
+
+### 判断是否是Android
+
+```js
+const isAndroid = UA && UA.indexOf('android') > 0;
+```
+
+### 判断是否是IOS
+
+```js
+const isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
+```
+
+### 判断是否是Chrome
+
+```js
+const isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+```
+
+### 判断是否为web环境
+
 ```js
 const isBrowser = () => {
     return ![typeof window, typeof document].includes('undefined');
 };
 ```
-
 
 ### url解析
 
