@@ -100,7 +100,7 @@ const isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
 const isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
 ```
 
-### 判断是否为web环境
+### 判断是否为Web环境
 
 ```js
 const isBrowser = () => {
@@ -108,7 +108,29 @@ const isBrowser = () => {
 };
 ```
 
-### url解析
+### 检测浏览器是否支持Canvas
+
+```js
+const isSupportCanvas = () {
+    return document.createElement('canvas').getContext ? true : false;
+};
+```
+
+### 常用的正则表达式
+
+```js
+const isUrl = new RegExp('[a-zA-z]+://[^\s]*') // 网址判断
+const isEmail = new RegExp('^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$') // 邮箱判断
+const isChinese = new RegExp('[\u4e00-\u9fa5]') // 中文判断
+const isPhone = new RegExp('^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$') // 中国大陆手机号码
+const isIDCard = new RegExp('(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)
+') // 身份证
+const isPositiveInteger = new RegExp('[0-9]*[1-9][0-9]*') // 正整数
+const isNegativeInteger = new RegExp('-[0-9]*[1-9][0-9]*') // 负整数
+const isInteger = new regExp('-?\d+') // 整数
+```
+
+### URL解析
 
 > 获取查询参数的键值对
 
@@ -188,4 +210,77 @@ function deepCopy(obj){
 
 ```js
 let newObj = JSON.parse(JSON.stringify(obj));
+```
+
+### 数组平均数
+
+```js
+const average = (arr) => {
+  return arr.reduce((acc, val) => acc + val, 0) / arr.length;
+}
+```
+
+### 大写每个单词的首字母
+
+```js
+const capitalizeEveryWord = (str )=> {
+  return str.replace(/\b[a-z]/g, (char) => {
+    return char.toUpperCase();
+  });
+}
+```
+
+### 计算数组中某个值的出现次数
+
+```js
+const countOccurrences = (arr, value) => {
+  return arr.reduce((a, v) => {
+    return v === value ? a + 1 : a + 0;
+  }, 0)
+};
+```
+
+### 比较数组之间的区别
+
+```js
+const difference = (a, b) => { 
+  const s = new Set(b); 
+  return a.filter((x) => {
+    return !s.has(x);
+  }); 
+};
+```
+
+### 获取数组中的最大值
+
+```js
+const arrayMax = (arr) => {
+  return Math.max(...arr);
+};
+```
+
+### 获取数组中的最小值
+
+```js
+const arrayMax = (arr) => {
+  return Math.min(...arr);
+};
+```
+
+### 反转字符串
+
+```js
+const reverseString = (str) => {
+  return [...str].reverse().join('');
+};
+```
+
+### 数组之和
+
+```js
+const sum = (arr) => {
+  return arr.reduce((acc, val) => {
+      return acc + val;
+  }, 0);
+}
 ```
