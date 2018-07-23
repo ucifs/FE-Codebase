@@ -123,8 +123,7 @@ const isUrl = new RegExp('[a-zA-z]+://[^\s]*') // 网址判断
 const isEmail = new RegExp('^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$') // 邮箱判断
 const isChinese = new RegExp('[\u4e00-\u9fa5]') // 中文判断
 const isPhone = new RegExp('^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$') // 中国大陆手机号码
-const isIDCard = new RegExp('(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)
-') // 身份证
+const isIDCard = new RegExp('(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)') // 身份证
 const isPositiveInteger = new RegExp('[0-9]*[1-9][0-9]*') // 正整数
 const isNegativeInteger = new RegExp('-[0-9]*[1-9][0-9]*') // 负整数
 const isInteger = new regExp('-?\d+') // 整数
