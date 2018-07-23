@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+    "changelog": "/usr/local/Cellar/node/10.7.0/lib/node_modules/conventional-changelog-cli/cli.js -p angular -i CHANGELOG.md -s"
   },
+  "pre-push": [
+    "changelog"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhaoqize/FE-Codebase.git"
