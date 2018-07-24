@@ -283,3 +283,11 @@ const sum = (arr) => {
   }, 0);
 }
 ```
+
+### 数组转字符串
+
+```js
+const array2String = function (array) {
+  return array.length === 1 ? array[0] : array.join(' ')
+}
+```
