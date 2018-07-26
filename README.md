@@ -291,3 +291,13 @@ const array2String = function (array) {
   return array.length === 1 ? array[0] : array.join(' ')
 }
 ```
+
+### 获取当前正在执行的脚本
+
+```js
+const getCurrentScriptSource = funtion () {
+  if (document.currentScript) {
+    return document.currentScript.getAttribute('src');
+  }
+}
+```
